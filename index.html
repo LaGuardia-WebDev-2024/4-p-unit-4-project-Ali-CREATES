@@ -1,12 +1,12 @@
 <!--
 Requirements
-[  ] Google Font OR Uploaded Font
-[  ] font-size OR font-style 
-[  ] Five CSS Rules
-[  ] Three Images
+[yes] Google Font OR Uploaded Font
+[yes] font-size OR font-style 
+[yes] Five CSS Rules
+[yes] Three Images
 
 Select ONE Additional Feature to Add  
-[ no ] Feature 1 - Include a Static Background Image
+[ yes ] Feature 1 - Include a Static Background Image
 [ no ] Feature 2 - Use a unique border-radius
 [ no ] Feature 3 - Use width and margin CSS Properties
 [ no ] Feature 4 - Include at least one more additional HTML page
@@ -14,17 +14,68 @@ Select ONE Additional Feature to Add
 
 <!DOCTYPE html>
 <html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Bubblegum Sans"
+      rel="stylesheet"
+    />
+    <title>Unit 4 Project</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background-color: #fff5e0;
+        color: #141e46;
+        font-family: "Bubblegum Sans";
+        font-size: 18px;
+        background-image: url("https://64.media.tumblr.com/144cba0bf170072a67bc00a777da824e/tumblr_mxcdf5DSih1qlx3hqo1_640.jpg");
+        background-size: 2000px 750px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
 
-<head>
-  <title>Unit 4 Project</title>
-  <meta charset="utf-8">
-  <style>
+      #randomImage {
+        border-radius: 30px;
+      }
 
-  </style>
-</head>
-<body>
+      #randomImage {
+        border-radius: 30px;
+      }
 
- 
+      #randomImage {
+        border: 6px solid brown;
+      }
 
-</body>
+      .shadows {
+        background-color: #f9d983;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="shadows">Find Your Perfect Sandwhich!</h1>
+    <p>Click the button below to find your perfect sandwhich!</p>
+    <button id="changeImage">Find Your Sandwhich!</button><br />
+    <br />
+    <img id="randomImage" width="230" height="155" />
+    <script>
+      $(document).ready(function () {
+        var images = [
+          "https://www.madebynashish.com/wp-content/uploads/2020/06/Hot-Honey-Chicken-Sandwich-041-Edit-2-2.jpg",
+          "https://www.dontgobaconmyheart.co.uk/wp-content/uploads/2018/05/chicken-pesto-grilled-cheese-new.jpg",
+          "https://assets.epicurious.com/photos/5af1b6634692b76178e65769/master/pass/Crispy-Fish-Sandwich-03052018.jpg",
+          "https://qcchopshop.com/cdn/shop/files/3-american-classic-reg.png?v=1704230575",
+          "https://www.seriouseats.com/thmb/Jw51qbtg89WKmYMX3F-bHSDHPG0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20240301-SEA-BEC-AmandaSuarez-hero-6f228860d4b544799961b97935ce08f6.jpg",
+        ];
+
+        function displayRandomImage() {
+          var randomIndex = Math.floor(Math.random() * images.length);
+          $("#randomImage").attr("src", images[randomIndex]);
+        }
+
+        displayRandomImage(); // Display an image on page load
+
+        $("#changeImage").click(displayRandomImage);
+      });
+    </script>
+  </body>
 </html>
